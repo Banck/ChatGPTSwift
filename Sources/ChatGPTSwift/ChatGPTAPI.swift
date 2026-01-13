@@ -77,10 +77,10 @@ public class ChatGPTAPI: @unchecked Sendable {
             [systemMessage(content: systemText)] + historyList + [
                 Message(role: "user", content: text)
             ]
-        if gptEncoder.encode(text: messages.content).count > 4096 {
-            _ = historyList.removeFirst()
-            messages = generateMessages(from: text, systemText: systemText)
-        }
+//        if gptEncoder.encode(text: messages.content).count > 4096 {
+//            _ = historyList.removeFirst()
+//            messages = generateMessages(from: text, systemText: systemText)
+//        }
         return messages
     }
 
