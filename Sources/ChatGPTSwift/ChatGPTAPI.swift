@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import GPTEncoder
+//import GPTEncoder
 import OpenAPIRuntime
 
 #if os(Linux)
@@ -73,7 +73,7 @@ public class ChatGPTAPI: @unchecked Sendable {
     }
 
     private func generateMessages(from text: String, systemText: String) -> [Message] {
-        var messages =
+        let messages =
             [systemMessage(content: systemText)] + historyList + [
                 Message(role: "user", content: text)
             ]
