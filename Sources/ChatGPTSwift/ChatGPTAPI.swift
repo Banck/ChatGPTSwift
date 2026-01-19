@@ -30,7 +30,7 @@ public class ChatGPTAPI: @unchecked Sendable {
 
     public private(set) var client: Client
     public var urlString = "https://api.openai.com/v1"
-    private let gptEncoder = GPTEncoder()
+//    private let gptEncoder = GPTEncoder()
     public private(set) var historyList = [Message]()
     private var apiKey: String
 

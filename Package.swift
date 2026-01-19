@@ -15,7 +15,7 @@ let package = Package(
             targets: ["SampleApp"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/alfianlosari/GPTEncoder.git", exact: "1.0.4"),
+//        .package(url: "https://github.com/alfianlosari/GPTEncoder.git", exact: "1.0.4"),
         .package(url: "https://github.com/apple/swift-openapi-generator", from: "1.10.2"),
         .package(url: "https://github.com/apple/swift-openapi-runtime", from: "1.8.2"),
         .package(url: "https://github.com/apple/swift-openapi-urlsession", from: "1.1.0"),
@@ -26,7 +26,7 @@ let package = Package(
         .target(
             name: "ChatGPTSwift",
             dependencies: [
-                .product(name: "GPTEncoder", package: "GPTEncoder"),
+//                .product(name: "GPTEncoder", package: "GPTEncoder"),
                 .product(name: "HTTPTypes", package: "swift-http-types"),
                 .product(name: "OpenAPIRuntime", package: "swift-openapi-runtime"),
                 .product(name: "OpenAPIURLSession", package: "swift-openapi-urlsession",
