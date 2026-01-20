@@ -39,20 +39,28 @@ struct ErrorResponse: Decodable {
     let type: String?
 }
 
-struct CompletionResponse: Decodable {
-    let choices: [Choice]
-    let usage: Usage?
+public struct CompletionResponse: Decodable {
+    public let choices: [Choice]
+    public let message: String
+    public let usage: Usage?
 }
 
-struct Usage: Decodable {
-    let promptTokens: Int?
-    let completionTokens: Int?
-    let totalTokens: Int?
+public struct Usage: Decodable {
+
+    public struct PromptTokenDetails: Codable, Hashable, Sendable {
+        public var audioTokens: Int
+        public var cachedTokens: Int
+    }
+
+    public let promptTokens: Int?
+    public let completionTokens: Int?
+    public let totalTokens: Int?
+    public let promptTokenDetails: PromptTokenDetails
 }
 
-struct Choice: Decodable {
-    let finishReason: String?
-    let message: Message
+public struct Choice: Decodable {
+    public let finishReason: String?
+    public let message: Message
 }
 
 struct StreamCompletionResponse: Decodable {

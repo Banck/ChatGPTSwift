@@ -7140,6 +7140,14 @@ public enum Components {
             ///
             /// - Remark: Generated from `#/components/schemas/CompletionUsage/total_tokens`.
             public var total_tokens: Swift.Int
+
+            public struct PromptTokenDetails: Codable, Hashable, Sendable {
+                public var audio_tokens: Swift.Int
+                public var cached_tokens: Swift.Int
+            }
+
+            public var prompt_tokens_details: PromptTokenDetails
+
             /// Creates a new `CompletionUsage`.
             ///
             /// - Parameters:
@@ -7149,16 +7157,19 @@ public enum Components {
             public init(
                 completion_tokens: Swift.Int,
                 prompt_tokens: Swift.Int,
-                total_tokens: Swift.Int
+                total_tokens: Swift.Int,
+                prompt_tokens_details: PromptTokenDetails
             ) {
                 self.completion_tokens = completion_tokens
                 self.prompt_tokens = prompt_tokens
                 self.total_tokens = total_tokens
+                self.prompt_tokens_details = prompt_tokens_details
             }
             public enum CodingKeys: String, CodingKey {
                 case completion_tokens
                 case prompt_tokens
                 case total_tokens
+                case prompt_tokens_details
             }
         }
         /// Represents an `assistant` that can call the model and use tools.
